@@ -1,6 +1,11 @@
 # ThumbSplit — YouTube Title & Thumbnail Split-Previewer
 ### By DimusTech Studio
 
+[![Live Website](https://img.shields.io/badge/Live_App-thumbsplit.dimustech.net-red?style=for-the-badge&logo=youtube)](https://thumbsplit.dimustech.net)
+[![GitHub stars](https://img.shields.io/github/stars/dimiboy/thumbsplit?style=for-the-badge)](https://github.com/dimiboy/thumbsplit/stargazers)
+
+🌐 **Live Web Application:** [https://thumbsplit.dimustech.net](https://thumbsplit.dimustech.net)
+
 **ThumbSplit** is a lightweight, zero-cloud-cost, 100% client-side web application for YouTube creators to A/B test and preview their video titles and thumbnails across realistic YouTube environments before publishing.
 
 ---

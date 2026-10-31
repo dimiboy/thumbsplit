@@ -15,6 +15,7 @@ import {
   Heart
 } from 'lucide-react';
 import YoutubeIcon from './YoutubeIcon';
+import GithubIcon from './GithubIcon';
 
 export default function Header({
   activeTab,
@@ -169,6 +170,18 @@ export default function Header({
             <Heart className="w-3.5 h-3.5 fill-pink-500" />
             <span className="hidden sm:inline">Tip / Support</span>
           </button>
+
+          {/* GitHub Repository */}
+          <a
+            href="https://github.com/dimiboy/thumbsplit"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Star & View Source on GitHub"
+            className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-lg border border-neutral-800 bg-neutral-900 text-neutral-400 hover:text-white hover:border-neutral-700 transition-all shadow-xs"
+          >
+            <GithubIcon className="w-3.5 h-3.5 fill-current" />
+            <span className="hidden lg:inline">GitHub</span>
+          </a>
 
           {/* Reset */}
           <button

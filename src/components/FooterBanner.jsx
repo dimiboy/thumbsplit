@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Copy, Check, ExternalLink, Heart, Coffee } from 'lucide-react';
 import YoutubeIcon from './YoutubeIcon';
+import GithubIcon from './GithubIcon';
 import PrivacyModal from './PrivacyModal';
 
 export default function FooterBanner({ variants, channel, onOpenSupport }) {
@@ -86,6 +87,16 @@ export default function FooterBanner({ variants, channel, onOpenSupport }) {
         </div>
 
         <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/dimiboy/thumbsplit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-neutral-400 hover:text-white transition-colors underline-offset-4 hover:underline flex items-center gap-1 font-medium"
+          >
+            <GithubIcon className="w-3.5 h-3.5 fill-current" />
+            <span>GitHub</span>
+          </a>
+          <span>•</span>
           <button
             onClick={onOpenSupport}
             className="text-pink-400 hover:text-pink-300 transition-colors underline-offset-4 hover:underline font-medium flex items-center gap-1"

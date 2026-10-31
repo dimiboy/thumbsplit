@@ -6,6 +6,8 @@
 
 🌐 **Live Web Application:** [https://thumbsplit.dimustech.net](https://thumbsplit.dimustech.net)
 
+![ThumbSplit Studio Preview](assets/screenshot.png)
+
 **ThumbSplit** is a lightweight, zero-cloud-cost, 100% client-side web application for YouTube creators to A/B test and preview their video titles and thumbnails across realistic YouTube environments before publishing.
 
 ---

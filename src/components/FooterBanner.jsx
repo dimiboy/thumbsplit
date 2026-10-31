@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Heart, Copy, Check, ExternalLink } from 'lucide-react';
+import { ShieldCheck, Copy, Check, ExternalLink } from 'lucide-react';
 import YoutubeIcon from './YoutubeIcon';
+import PrivacyModal from './PrivacyModal';
 
 export default function FooterBanner({ variants, channel }) {
   const [copied, setCopied] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   const copySummary = () => {
     const text = `🎯 YouTube A/B Split Test Plan (${channel.name})\n\n` +
@@ -66,25 +68,36 @@ export default function FooterBanner({ variants, channel }) {
         </div>
       </div>
 
-      {/* Trust & Local First Badges */}
+      {/* Trust, Local First & Compliance */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-emerald-500" />
           <span>100% Private & Client-Side. Your images and titles never leave your browser.</span>
         </div>
 
-        <div className="flex items-center gap-1.5">
-          <span>Crafted for creators by</span>
-          <a
-            href="https://youtube.com/c/dimustech"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-400 hover:text-white font-medium hover:underline"
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => setPrivacyOpen(true)}
+            className="text-neutral-400 hover:text-white transition-colors underline-offset-4 hover:underline"
           >
-            DimusTech
-          </a>
+            Privacy Policy
+          </button>
+          <span>•</span>
+          <div className="flex items-center gap-1.5">
+            <span>Crafted for creators by</span>
+            <a
+              href="https://youtube.com/c/dimustech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-400 hover:text-white font-medium hover:underline"
+            >
+              DimusTech
+            </a>
+          </div>
         </div>
       </div>
+
+      <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </footer>
   );
 }

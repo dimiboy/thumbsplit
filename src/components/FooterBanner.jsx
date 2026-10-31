@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Copy, Check, ExternalLink } from 'lucide-react';
+import { ShieldCheck, Copy, Check, ExternalLink, Heart, Coffee } from 'lucide-react';
 import YoutubeIcon from './YoutubeIcon';
 import PrivacyModal from './PrivacyModal';
 
-export default function FooterBanner({ variants, channel }) {
+export default function FooterBanner({ variants, channel, onOpenSupport }) {
   const [copied, setCopied] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
@@ -49,22 +49,32 @@ export default function FooterBanner({ variants, channel }) {
         </button>
       </div>
 
-      {/* Non-intrusive AdSense / Affiliate Banner Slot Placeholder */}
+      {/* Non-intrusive AdSense / Support Notice */}
       <div className="w-full bg-neutral-900/40 border border-dashed border-neutral-800 rounded-2xl p-4 text-center my-6">
         <div className="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold mb-1">
-          Sponsor / Community Notice
+          Support Independent Tools
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-neutral-300">
-          <span>Subscribe to <strong className="text-white">DimusTech</strong> on YouTube for real-world tech reviews, smart home automation & PC guides.</span>
-          <a
-            href="https://youtube.com/c/dimustech"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold hover:underline"
-          >
-            <span>Visit Channel</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
+          <span>Like ThumbSplit? Support development or subscribe to <strong className="text-white">DimusTech</strong> on YouTube.</span>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onOpenSupport}
+              className="inline-flex items-center gap-1.5 text-pink-400 hover:text-pink-300 font-semibold hover:underline"
+            >
+              <Heart className="w-3.5 h-3.5 fill-pink-400" />
+              <span>Tip via PayPal or Crypto</span>
+            </button>
+            <span className="text-neutral-600">•</span>
+            <a
+              href="https://youtube.com/c/dimustech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-red-400 hover:text-red-300 font-semibold hover:underline"
+            >
+              <span>Visit YouTube</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -76,6 +86,14 @@ export default function FooterBanner({ variants, channel }) {
         </div>
 
         <div className="flex items-center gap-4">
+          <button
+            onClick={onOpenSupport}
+            className="text-pink-400 hover:text-pink-300 transition-colors underline-offset-4 hover:underline font-medium flex items-center gap-1"
+          >
+            <Heart className="w-3 h-3 fill-pink-400" />
+            <span>Support</span>
+          </button>
+          <span>•</span>
           <button
             onClick={() => setPrivacyOpen(true)}
             className="text-neutral-400 hover:text-white transition-colors underline-offset-4 hover:underline"

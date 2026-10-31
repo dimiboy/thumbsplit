@@ -11,7 +11,8 @@ import {
   Monitor,
   Smartphone,
   Sidebar,
-  Search
+  Search,
+  Heart
 } from 'lucide-react';
 import YoutubeIcon from './YoutubeIcon';
 
@@ -27,6 +28,7 @@ export default function Header({
   grayscale,
   setGrayscale,
   onOpenBlindTest,
+  onOpenSupport,
   onReset
 }) {
   const tabs = [
@@ -156,6 +158,16 @@ export default function Header({
           >
             <Zap className="w-3.5 h-3.5" />
             <span>Blind Test</span>
+          </button>
+
+          {/* Support / Tip */}
+          <button
+            onClick={onOpenSupport}
+            title="Support ThumbSplit via PayPal or Crypto"
+            className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-pink-500/30 bg-pink-500/10 text-pink-400 hover:bg-pink-500/20 hover:text-pink-300 transition-all shadow-xs"
+          >
+            <Heart className="w-3.5 h-3.5 fill-pink-500" />
+            <span className="hidden sm:inline">Tip / Support</span>
           </button>
 
           {/* Reset */}

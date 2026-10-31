@@ -8,6 +8,7 @@ import MobileFeedView from './components/views/MobileFeedView';
 import SidebarView from './components/views/SidebarView';
 import SearchResultsView from './components/views/SearchResultsView';
 import BlindTestModal from './components/BlindTestModal';
+import SupportModal from './components/SupportModal';
 import FooterBanner from './components/FooterBanner';
 import { DEFAULT_CHANNEL, INITIAL_VARIANTS } from './data/mockFeed';
 
@@ -38,6 +39,7 @@ export default function App() {
   const [blurLevel, setBlurLevel] = useState('none');
   const [grayscale, setGrayscale] = useState(false);
   const [isBlindTestOpen, setIsBlindTestOpen] = useState(false);
+  const [isSupportOpen, setIsSupportOpen] = useState(false);
 
   // Auto-sync with localStorage
   useEffect(() => {
@@ -84,6 +86,7 @@ export default function App() {
         grayscale={grayscale}
         setGrayscale={setGrayscale}
         onOpenBlindTest={() => setIsBlindTestOpen(true)}
+        onOpenSupport={() => setIsSupportOpen(true)}
         onReset={handleReset}
       />
 
@@ -162,7 +165,11 @@ export default function App() {
       </main>
 
       {/* Footer & Share Bar */}
-      <FooterBanner variants={variants} channel={channel} />
+      <FooterBanner
+        variants={variants}
+        channel={channel}
+        onOpenSupport={() => setIsSupportOpen(true)}
+      />
 
       {/* Blind Eye-Snapping 3-Second Test Modal */}
       <BlindTestModal
@@ -170,6 +177,12 @@ export default function App() {
         onClose={() => setIsBlindTestOpen(false)}
         variants={variants}
         channel={channel}
+      />
+
+      {/* Support / Tip Modal (PayPal & Bitcoin) */}
+      <SupportModal
+        isOpen={isSupportOpen}
+        onClose={() => setIsSupportOpen(false)}
       />
     </div>
   );

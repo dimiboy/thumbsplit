@@ -34,6 +34,15 @@
 
 ---
 
+## ☕ Support & Donations
+
+ThumbSplit is completely free, privacy-focused, and open source. If it helped you save time or get higher CTR on your videos, consider supporting development:
+
+- **PayPal:** [paypal.me/dimiboy](https://paypal.me/dimiboy)
+- **Bitcoin (BTC):** `1344MBr6fkTYAzo64yQxjXNQDHC84THP3z` (Native BTC)
+
+---
+
 ## 🚀 Quick Start
 
 ```bash

@@ -10,6 +10,7 @@ import SearchResultsView from './components/views/SearchResultsView';
 import BlindTestModal from './components/BlindTestModal';
 import SupportModal from './components/SupportModal';
 import FooterBanner from './components/FooterBanner';
+import AdBanner from './components/AdBanner';
 import { DEFAULT_CHANNEL, INITIAL_VARIANTS } from './data/mockFeed';
 
 export default function App() {
@@ -162,6 +163,9 @@ export default function App() {
             />
           )}
         </div>
+
+        {/* Non-intrusive AdSense Banner Slot */}
+        <AdBanner slotId="6234153621" />
       </main>
 
       {/* Footer & Share Bar */}
